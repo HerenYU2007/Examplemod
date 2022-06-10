@@ -9,8 +9,8 @@
     "Heren"
   ],
   "contact": {
-    "homepage": "",
-    "sources": "http://herenyu.space"
+    "homepage": "http://herenyu.space",
+    "sources": "https://github.com/HerenYU2007/Examplemod"
   },
 
   "license": "CC0-1.0",
@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "nightmare.heren.example.ExampleMod"
     ]
   },
   "mixins": [
