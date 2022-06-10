@@ -9,7 +9,7 @@ import net.minecraft.util.registry.Registry;
 
 public class Sherlock {
 
-    private static Item SHERLOCK = r("sherlock_dog",new Item(new FabricItemSettings().group(ItemGroup.MISC)));
+    private static final Item SHERLOCK = r("sherlockdog",new Item(new FabricItemSettings().group(ItemGroup.MISC)));
 
     private static Item r(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(ExampleMod.MOD_ID, name), item);
