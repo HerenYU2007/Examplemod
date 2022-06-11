@@ -24,7 +24,7 @@ public class modBlocks {
     }
 
     //以下注册方块
-    public static void DogBlockRegister() {
+    public static void registerModBlocks() {
         //add strength and require tool
         //strength can be higher
         Block DOG_BLOCK = registerBlock("dog_block",
@@ -39,5 +39,8 @@ public class modBlocks {
 
 
 
+    }
+
+    public static void register() {
     }
 }

@@ -10,8 +10,8 @@ public class ExampleMod implements ModInitializer {
 
 	@Override
 	public void onInitialize(){
-		modItems.register();
-		modBlocks.DogBlockRegister();
+		modItems.ModItemRegister();
+		modBlocks.registerModBlocks();
 	}
 }
 

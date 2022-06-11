@@ -2,8 +2,6 @@
 
 .gradle/
 build/
-out/
-classes/
 
 # eclipse
 
