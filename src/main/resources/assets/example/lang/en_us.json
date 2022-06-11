@@ -1,6 +1,10 @@
 {
   "item.example.sherlockdog" : "Sherlock",
-  "block.example.dog_block" : "Dog_Block",
-  "block.example.tina_block" : "Tina_Block"
-}
+  "item.example.modicon" : "模组图标",
 
+  "block.example.dog_block" : "Dog_Block",
+  "block.example.tina_block" : "Tina_Block",
+  "block.example.gold_dog_block" : "Gold_Dog_Block",
+
+  "itemGroup.example.example": "Heren模组物品"
+}

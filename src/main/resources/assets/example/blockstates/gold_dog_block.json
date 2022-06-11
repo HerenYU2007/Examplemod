@@ -1,0 +1,7 @@
+{
+  "variants" : {
+    "" : {
+      "model" : "example:block/gold_dog_block"
+    }
+  }
+}

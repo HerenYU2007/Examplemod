@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import nightmare.heren.example.ModItemGroup;
 
 public class modBlocks {
 
@@ -22,16 +23,20 @@ public class modBlocks {
         return Registry.register(Registry.ITEM, new Identifier(ExampleMod.MOD_ID, name), new BlockItem(block, new FabricItemSettings().group(itemGroup)));
     }
 
-//以下注册方块
-
+    //以下注册方块
     public static void DogBlockRegister() {
-        Block DOG_BLOCK = registerBlock("dog_block",  //英杰块
-                new Block(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()),
-                ItemGroup.MISC);
+        //add strength and require tool
+        //strength can be higher
+        Block DOG_BLOCK = registerBlock("dog_block",
+                new Block(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.EXAMPLE);
 
-        Block TINA_BLOCK = registerBlock("tina_block", //铃惠块
-                new Block(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()),
-                ItemGroup.MISC);
+        Block TINA_BLOCK = registerBlock("tina_block",
+                new Block(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.EXAMPLE);
+
+        Block GOLDDOGBLOCK = registerBlock("gold_dog_block",
+                new Block(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.EXAMPLE);
+
+
 
 
     }
