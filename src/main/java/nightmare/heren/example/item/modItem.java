@@ -13,17 +13,8 @@ public class modItem {
         return Registry.register(Registry.ITEM, new Identifier(ExampleMod.MOD_ID, name), item);
     }
 
-    private static final Item SHERLOCKDOG = r("sherlockdog",new Item(new FabricItemSettings().group(ItemGroup.MISC)));
-
-
-
-
-
-
-
-
-
-
+    private static final Item SHERLOCKDOG = r("sherlockdog",  //英杰狗
+            new Item(new FabricItemSettings().group(ItemGroup.MISC)));
 
 
 

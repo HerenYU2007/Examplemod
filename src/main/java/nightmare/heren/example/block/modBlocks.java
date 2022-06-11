@@ -21,12 +21,18 @@ public class modBlocks {
     private static Item registerBlockItem(String name, Block block, ItemGroup itemGroup) {
         return Registry.register(Registry.ITEM, new Identifier(ExampleMod.MOD_ID, name), new BlockItem(block, new FabricItemSettings().group(itemGroup)));
     }
-    public static void DogBlockRegister() {
-        Block DOG_BLOCK = registerBlock("dog_block",
-                new Block(FabricBlockSettings.of(Material.METAL)), ItemGroup.MISC);
 
-        Block TINA_BLOCK = registerBlock("tina_block",
-                new Block(FabricBlockSettings.of(Material.METAL)), ItemGroup.MISC);
+//以下注册方块
+
+    public static void DogBlockRegister() {
+        Block DOG_BLOCK = registerBlock("dog_block",  //英杰块
+                new Block(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()),
+                ItemGroup.MISC);
+
+        Block TINA_BLOCK = registerBlock("tina_block", //铃惠块
+                new Block(FabricBlockSettings.of(Material.STONE).strength(4f).requiresTool()),
+                ItemGroup.MISC);
+
 
     }
 }
