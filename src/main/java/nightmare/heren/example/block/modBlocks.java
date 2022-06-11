@@ -27,5 +27,6 @@ public class modBlocks {
 
         Block TINA_BLOCK = registerBlock("tina_block",
                 new Block(FabricBlockSettings.of(Material.METAL)), ItemGroup.MISC);
+
     }
 }
