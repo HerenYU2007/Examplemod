@@ -1,8 +1,8 @@
 package nightmare.heren.example;
 
 import net.fabricmc.api.ModInitializer;
-import nightmare.heren.example.block.dogBlocks;
-import nightmare.heren.example.item.sherlockItem;
+import nightmare.heren.example.block.modBlocks;
+import nightmare.heren.example.item.modItem;
 
 public class ExampleMod implements ModInitializer {
 
@@ -10,8 +10,8 @@ public class ExampleMod implements ModInitializer {
 
 	@Override
 	public void onInitialize(){
-		sherlockItem.register();
-		dogBlocks.DogBlockRegister();
+		modItem.register();
+		modBlocks.DogBlockRegister();
 	}
 }
 

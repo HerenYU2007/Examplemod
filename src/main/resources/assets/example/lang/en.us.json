@@ -1,5 +1,6 @@
 {
   "item.example.sherlockdog" : "Sherlock",
-  "block.example.dog_block" : "Dog_block"
+  "block.example.dog_block" : "Dog_Block",
+  "block.example.tina_block" : "Tina_Block"
 }
 

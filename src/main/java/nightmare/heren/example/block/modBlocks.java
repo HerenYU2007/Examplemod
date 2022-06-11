@@ -11,7 +11,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class dogBlocks {
+public class modBlocks {
 
     private static Block registerBlock(String name, Block block, ItemGroup itemGroup){
         registerBlockItem(name ,block, itemGroup);
@@ -22,6 +22,10 @@ public class dogBlocks {
         return Registry.register(Registry.ITEM, new Identifier(ExampleMod.MOD_ID, name), new BlockItem(block, new FabricItemSettings().group(itemGroup)));
     }
     public static void DogBlockRegister() {
-        Block DOG_BLOCK = registerBlock("dog_block", new Block(FabricBlockSettings.of(Material.METAL)), ItemGroup.MISC);
+        Block DOG_BLOCK = registerBlock("dog_block",
+                new Block(FabricBlockSettings.of(Material.METAL)), ItemGroup.MISC);
+
+        Block TINA_BLOCK = registerBlock("tina_block",
+                new Block(FabricBlockSettings.of(Material.METAL)), ItemGroup.MISC);
     }
 }

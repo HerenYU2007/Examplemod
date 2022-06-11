@@ -7,14 +7,30 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class sherlockItem {
-
-    private static final Item SHERLOCK = r("sherlockdog",new Item(new FabricItemSettings().group(ItemGroup.MISC)));
+public class modItem {
 
     private static Item r(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(ExampleMod.MOD_ID, name), item);
     }
-    public static void register(){
 
+    private static final Item SHERLOCKDOG = r("sherlockdog",new Item(new FabricItemSettings().group(ItemGroup.MISC)));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void register(){
     }
 }
