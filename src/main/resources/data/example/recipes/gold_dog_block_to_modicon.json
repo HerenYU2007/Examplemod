@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "example:gold_dog_block"
+    }
+  },
+  "pattern": [
+    "   ",
+    " ##",
+    " ##"
+  ],
+  "result": {
+    "item": "example:modicon"
+  }
+}

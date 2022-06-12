@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "example:sherlockdog"
+    },
+    "*": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "example:gold_dog_block"
+  }
+}

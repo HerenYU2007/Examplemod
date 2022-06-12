@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "example:modicon"
+    },
+    "*": {
+      "item":"minecraft:obsidian"
+    }
+  },
+  "pattern": [
+    "###",
+    "#*#",
+    "###"
+  ],
+  "result": {
+    "item": "example:modicon_block",
+    "count": 4
+  }
+}

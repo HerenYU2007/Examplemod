@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "example:sherlockdog"
+    }
+  },
+  "pattern": [
+    "   ",
+    " ##",
+    " ##"
+  ],
+  "result": {
+    "item": "example:dog_block"
+  }
+}

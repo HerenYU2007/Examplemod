@@ -36,6 +36,9 @@ public class modBlocks {
         Block GOLDDOGBLOCK = registerBlock("gold_dog_block",
                 new Block(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()), ModItemGroup.EXAMPLE);
 
+        Block MODICONBLOCK = registerBlock("modicon_block",
+                new Block(FabricBlockSettings.of(Material.METAL).strength(10f).requiresTool()), ModItemGroup.EXAMPLE);
+
 
 
 
