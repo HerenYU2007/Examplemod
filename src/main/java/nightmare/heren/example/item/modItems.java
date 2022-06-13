@@ -10,6 +10,7 @@ public class modItems {
    public static void ModItemRegister(){
        //英杰狗
        Tool.regItem("sherlockdog");
+       Tool.regItem("shit_block");
    }
 
 

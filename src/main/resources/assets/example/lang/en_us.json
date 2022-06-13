@@ -1,6 +1,7 @@
 {
   "item.example.sherlockdog" : "Sherlock",
-  "item.example.modicon" : "模组图标",
+  "item.example.modicon" : "ModIcon",
+  "item.example.shit_block": "Shit_block",
 
   "block.example.dog_block" : "Dog_Block",
   "block.example.tina_block" : "Tina_Block",
