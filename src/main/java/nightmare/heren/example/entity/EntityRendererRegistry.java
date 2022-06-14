@@ -5,6 +5,8 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 
+import static net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry.*;
+
 @Environment(EnvType.CLIENT)
 public class EntityTestingClient implements ClientModInitializer {
 
@@ -15,8 +17,8 @@ public class EntityTestingClient implements ClientModInitializer {
          *
          * 实体渲染器也可以在实体基于上下文进行渲染前(EndermanEntityRenderer#render). 操作模型。
          */
-        EntityRendererRegistry.INSTANCE.register(EntityTesting.CUBE, (dispatcher, context) -> {
-            return new CubeEntityRenderer(dispatcher);
+        INSTANCE.register(EntityTesting.CUBE, (dispatcher, context) -> {
+            return new modEntityRenderer(dispatcher);
         });
     }
 }
