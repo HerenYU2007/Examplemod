@@ -2,18 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "#": {
-      "item": "example:sherlockdog"
-    },
-    "*": {
-      "item": "minecraft:wheat"
-    }
+      "item": "example:shit"
   },
   "pattern": [
-    "###",
-    "#*#",
-    "###"
+    "   ",
+    " ##",
+    " ##"
   ],
   "result": {
     "item": "example:shit_block"
+    }
   }
 }

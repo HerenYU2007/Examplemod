@@ -1,12 +1,13 @@
 {
   "item.example.sherlockdog" : "Sherlock",
   "item.example.modicon" : "ModIcon",
-  "item.example.shit_block": "Shit_block",
+  "item.example.shit": "Shit",
 
   "block.example.dog_block" : "Dog_Block",
   "block.example.tina_block" : "Tina_Block",
   "block.example.gold_dog_block" : "Gold_Dog_Block",
   "block.example.modicon_block" : "Modicon_Block",
+  "block.example.shit_block": "Shit_BLock",
 
   "itemGroup.example.example": "Heren_Mod_Item"
 }

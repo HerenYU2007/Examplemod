@@ -1,12 +1,13 @@
 {
   "item.example.sherlockdog" : "英杰狗",
   "item.example.modicon" : "模组图标",
-  "item.example.shit_block": "排泄物块",
+  "item.example.shit": "排泄物",
 
   "block.example.dog_block" : "英杰块",
   "block.example.tina_block" : "铃惠块",
   "block.example.gold_dog_block" : "大金狗块",
   "block.example.modicon_block" : "模组图标块",
+  "block.example.shit_block": "排泄物块",
 
   "itemGroup.example.example": "Heren模组物品"
 }

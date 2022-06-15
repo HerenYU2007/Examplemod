@@ -20,5 +20,8 @@ public class modBlocks {
 
         Tool.regBlock("modicon_block",
                 new Block(FabricBlockSettings.of(Material.METAL).strength(10f).requiresTool()));
+
+        Tool.regBlock("shit_block",
+                new Block(FabricBlockSettings.of(Material.METAL).strength(2f).requiresTool()));
     }
 }

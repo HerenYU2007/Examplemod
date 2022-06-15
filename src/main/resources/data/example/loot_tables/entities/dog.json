@@ -25,7 +25,7 @@
               "function": "minecraft:looting_enchant"
             }
           ],
-          "name": "example:shit_block"
+          "name": "example:shit"
         }
       ],
       "rolls": 1.0
