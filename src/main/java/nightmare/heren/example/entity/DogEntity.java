@@ -1,6 +1,8 @@
 package nightmare.heren.example.entity;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.attribute.DefaultAttributeContainer;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.world.World;
 
@@ -15,5 +17,10 @@ public class DogEntity extends PathAwareEntity {
 
     public DogEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
+    }
+    public static DefaultAttributeContainer.Builder createMobAttributes() {
+        DefaultAttributeContainer.Builder builder= MobEntity.createMobAttributes();
+        //后期添加自己的属性
+        return builder;
     }
 }
