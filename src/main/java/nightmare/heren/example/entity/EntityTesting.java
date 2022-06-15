@@ -2,30 +2,22 @@ package nightmare.heren.example.entity;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class EntityTesting implements ModInitializer {
 
-    /*
-     * 使用 "entitytesting:cube" 作为ID注册我们的实体
-     *
-     * 这个实体注册在了 SpawnGroup#CREATURE 类别下，大多数的动物和友好或中立的生物都注册在这个类别下。
-     * 它有一个 .75 * .75 (或12个像素宽，即一个方块的3/4)大小的碰撞体积。
-     */
-    public static final EntityType<CubeEntity> CUBE = Registry.register(
-            Registry.ENTITY_TYPE,
-            new Identifier("entitytesting", "cube"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CubeEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
-    );
+    public static final EntityType<modEntity> CUBE = null;
 
     @Override
     public void onInitialize() {
-        FabricDefaultAttributeRegistry.register(CUBE, CubeEntity.createMobAttributes());
-
+        /*
+         * 注册我们方块实体的默认属性。
+         * 属性是一个生物当前状态的数值，其中有攻击伤害和生命值等。
+         * 如果实体没有及时注册适当的属性，则游戏将崩溃。
+         *
+         * 在1.15中，它是通过重写实体类内部的方法来完成的。
+         * 大部分的原版实体都有一个静态方法(例如,ZombieEntity#createZombieAttributes)用于初始化它们的属性。
+         */
+        FabricDefaultAttributeRegistry.register(CUBE, modEntity.createMobAttributes());
     }
 }
