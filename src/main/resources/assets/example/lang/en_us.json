@@ -9,5 +9,7 @@
   "block.example.modicon_block" : "Modicon_Block",
   "block.example.shit_block": "Shit_BLock",
 
-  "itemGroup.example.example": "Heren_Mod_Item"
+  "itemGroup.example.example": "Heren_Mod_Item",
+
+  "entity.example.dog": "Sherlock_Dog"
 }

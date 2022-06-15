@@ -9,5 +9,7 @@
   "block.example.modicon_block" : "模组图标块",
   "block.example.shit_block": "排泄物块",
 
-  "itemGroup.example.example": "Heren模组物品"
+  "itemGroup.example.example": "Heren模组物品",
+
+  "entity.example.dog": "英杰狗"
 }
