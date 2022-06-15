@@ -29,7 +29,7 @@ public class ExampleMod implements ModInitializer {
 		 * 在1.15中，它是通过重写实体类内部的方法来完成的。
 		 * 大部分的原版实体都有一个静态方法(例如,ZombieEntity#createZombieAttributes)用于初始化它们的属性。
 		 */
-		FabricDefaultAttributeRegistry.register(DOG, ZombieEntity.createZombieAttributes());
+		FabricDefaultAttributeRegistry.register(DOG, DogEntity.createMobAttributes());
 	}
 	public static final EntityType<DogEntity> DOG = Registry.register(
 			Registry.ENTITY_TYPE,
