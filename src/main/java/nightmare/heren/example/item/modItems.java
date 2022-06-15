@@ -12,13 +12,4 @@ public class modItems {
        Tool.regItem("sherlockdog");
        Tool.regItem("shit_block");
    }
-
-
-
-
-
-
-
-    public static void register(){
-    }
 }

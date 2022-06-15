@@ -2,11 +2,20 @@ package nightmare.heren.example.entity;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class EntityTesting implements ModInitializer {
 
-    public static final EntityType<modEntity> CUBE = null;
+    public static final EntityType<DogEntity> DOG = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier("entitytesting", "cube"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, DogEntity::new).dimensions(EntityDimensions.fixed(0.75f, 0.75f)).build()
+    );
 
     @Override
     public void onInitialize() {
@@ -18,6 +27,6 @@ public class EntityTesting implements ModInitializer {
          * 在1.15中，它是通过重写实体类内部的方法来完成的。
          * 大部分的原版实体都有一个静态方法(例如,ZombieEntity#createZombieAttributes)用于初始化它们的属性。
          */
-        FabricDefaultAttributeRegistry.register(CUBE, modEntity.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(DOG, DogEntity.createMobAttributes());
     }
 }

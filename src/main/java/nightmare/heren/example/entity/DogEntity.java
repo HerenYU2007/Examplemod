@@ -11,9 +11,9 @@ import net.minecraft.world.World;
  * MobEntity 具有AI逻辑和移动控制。
  * PathAwareEntity 提供额外的寻路系统，很多AI任务都需要用到寻路。
  */
-public class modEntity extends PathAwareEntity {
+public class DogEntity extends PathAwareEntity {
 
-    public modEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
+    public DogEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
     }
 }

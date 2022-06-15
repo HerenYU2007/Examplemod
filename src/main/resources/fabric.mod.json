@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "nightmare.heren.example.ExampleMod"
+    ],
+    "client": [
+      "nightmare.heren.example.entity.EntityTestingClient"
     ]
   },
   "mixins": [
