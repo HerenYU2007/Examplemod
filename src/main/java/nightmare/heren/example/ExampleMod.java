@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -71,7 +72,7 @@ public class ExampleMod implements ModInitializer {
 	private static ConfiguredFeature<?, ?> OVERWORLD_DOG_BLOCK_CONFIGURED_FEATURE = new ConfiguredFeature
 			(Feature.ORE, new OreFeatureConfig(
 					OreConfiguredFeatures.STONE_ORE_REPLACEABLES,
-					Block.DOG_BLOCK.getDefaultState(),
+					Blocks.NETHERITE_BLOCK.getDefaultState(),
 					9)); // vein size
 
 	public static PlacedFeature OVERWORLD_DOG_BLOCK_PLACED_FEATURE = new PlacedFeature(
