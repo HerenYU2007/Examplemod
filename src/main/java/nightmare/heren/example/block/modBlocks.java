@@ -9,7 +9,7 @@ public class modBlocks {
     public static void registerModBlocks() {
         //add strength and require tool
         //strength can be higher
-        Tool.regBlock("dog_block",
+        Block DOG_BLOCK = Tool.regBlock("dog_block",
                 new Block(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()));
 
         Tool.regBlock("tina_block",
