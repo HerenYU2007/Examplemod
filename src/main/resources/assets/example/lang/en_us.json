@@ -11,5 +11,6 @@
 
   "itemGroup.example.example": "Heren_Mod_Item",
 
-  "entity.example.dog": "Sherlock_Dog"
+  "entity.example.dog": "Sherlock_Dog",
+  "item.example.dog_egg": "Dog Spawn Egg"
 }

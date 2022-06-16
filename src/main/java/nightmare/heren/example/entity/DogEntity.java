@@ -2,8 +2,8 @@ package nightmare.heren.example.entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
-import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.world.World;
 
 /*
@@ -13,14 +13,13 @@ import net.minecraft.world.World;
  * MobEntity 具有AI逻辑和移动控制。
  * PathAwareEntity 提供额外的寻路系统，很多AI任务都需要用到寻路。
  */
-public class DogEntity extends PathAwareEntity {
+public class DogEntity extends HostileEntity {
 
-    public DogEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
+    public DogEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
+        experiencePoints=50;
     }
     public static DefaultAttributeContainer.Builder createMobAttributes() {
-        DefaultAttributeContainer.Builder builder= MobEntity.createMobAttributes();
-        //后期添加自己的属性
-        return builder;
+        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23000000417232513).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0);
     }
 }

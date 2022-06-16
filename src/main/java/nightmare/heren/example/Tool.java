@@ -13,6 +13,9 @@ public class Tool {
     public static Item regItem(String name) {
         return Registry.register(Registry.ITEM, new Identifier(ExampleMod.MOD_ID, name), new Item(group));
     }
+    public static Item regEgg(String name,Item item) {
+        return Registry.register(Registry.ITEM, new Identifier(ExampleMod.MOD_ID, name), item);
+    }
 
     public static Block regBlock(String name, Block block) {
         Identifier i = new Identifier(ExampleMod.MOD_ID, name);
