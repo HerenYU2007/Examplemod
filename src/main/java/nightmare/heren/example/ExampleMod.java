@@ -1,11 +1,13 @@
 package nightmare.heren.example;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import nightmare.heren.example.block.modBlocks;
@@ -29,6 +31,13 @@ public class ExampleMod implements ModInitializer {
 		 * 大部分的原版实体都有一个静态方法(例如,ZombieEntity#createZombieAttributes)用于初始化它们的属性。
 		 */
 		FabricDefaultAttributeRegistry.register(DOG, DogEntity.createMobAttributes());
+
+		AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
+			if (entity instanceof DogEntity dog){
+				dog.setAttacking(player);
+			}
+			return ActionResult.PASS;
+		});
 	}
 	public static final EntityType<DogEntity> DOG = Registry.register(
 			Registry.ENTITY_TYPE,
