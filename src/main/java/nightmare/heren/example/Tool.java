@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
-public class Tool implements ModInitializer {
+public class Tool {
     private static final FabricItemSettings group = new FabricItemSettings().group(ModItemGroup.EXAMPLE);
 
     public static Item regItem(String name) {
@@ -22,10 +22,5 @@ public class Tool implements ModInitializer {
         Identifier i = new Identifier(ExampleMod.MOD_ID, name);
         Registry.register(Registry.ITEM, i, new BlockItem(block, group));
         return Registry.register(Registry.BLOCK, i, block);
-    }
-
-    @Override
-    public void onInitialize() {
-
     }
 }

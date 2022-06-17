@@ -4,6 +4,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.mob.SlimeEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.world.World;
 
@@ -14,13 +15,13 @@ import net.minecraft.world.World;
  * MobEntity 具有AI逻辑和移动控制。
  * PathAwareEntity 提供额外的寻路系统，很多AI任务都需要用到寻路。
  */
-public class DogEntity extends HostileEntity {
+public class DogEntity extends SlimeEntity {
 
-    public DogEntity(EntityType<? extends HostileEntity> entityType, World world) {
+    public DogEntity(EntityType<? extends SlimeEntity> entityType,World world) {
         super(entityType, world);
-        experiencePoints=50;
+        experiencePoints=250;
     }
     public static DefaultAttributeContainer.Builder createMobAttributes() {
-        return HostileEntity.createHostileAttributes().add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23000000417232513).add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0).add(EntityAttributes.GENERIC_MAX_HEALTH,100);
+        return SlimeEntity.createMobAttributes();
     }
 }
