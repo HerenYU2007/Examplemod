@@ -22,6 +22,6 @@ public class DogEntity extends SlimeEntity {
         experiencePoints=250;
     }
     public static DefaultAttributeContainer.Builder createMobAttributes() {
-        return SlimeEntity.createMobAttributes();
+        return ZombieEntity.createMobAttributes();
     }
 }
