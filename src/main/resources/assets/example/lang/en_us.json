@@ -12,5 +12,7 @@
   "itemGroup.example.example": "Heren_Mod_Item",
 
   "entity.example.dog": "Sherlock_Dog",
-  "item.example.dog_egg": "Dog Spawn Egg"
+  "item.example.dog_egg": "Dog Spawn Egg",
+
+  "enchantment.example.with_tina": "With Tina"
 }

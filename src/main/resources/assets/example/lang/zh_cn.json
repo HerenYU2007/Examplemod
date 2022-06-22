@@ -12,5 +12,7 @@
   "itemGroup.example.example": "Heren模组物品",
 
   "entity.example.dog": "英杰狗",
-  "item.example.dog_egg": "狗刷怪蛋"
+  "item.example.dog_egg": "狗刷怪蛋",
+
+  "enchantment.example.with_tina": "通铃术"
 }

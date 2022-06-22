@@ -3,6 +3,7 @@ package nightmare.heren.example;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -16,6 +17,9 @@ public class Tool {
     }
     public static Item regEgg(String name,Item item) {
         return Registry.register(Registry.ITEM, new Identifier(ExampleMod.MOD_ID, name), item);
+    }
+    public static Enchantment regEnchant(String name,Enchantment en){
+        return Registry.register(Registry.ENCHANTMENT,new Identifier(ExampleMod.MOD_ID,name),en);
     }
 
     public static final Block regBlock(String name, Block block) {

@@ -22,6 +22,7 @@ import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 import nightmare.heren.example.block.ModBlocks;
+import nightmare.heren.example.enchants.WithTina;
 import nightmare.heren.example.entity.DogEntity;
 import nightmare.heren.example.item.ModItems;
 
@@ -42,6 +43,7 @@ public class ExampleMod implements ModInitializer {
 		ModItems.ModItemRegister();
 		ModBlocks.registerModBlocks();
 		FabricDefaultAttributeRegistry.register(DOG, DogEntity.createMobAttributes());
+		regEnchants();
 		regEvents();
 
 
@@ -69,9 +71,12 @@ public class ExampleMod implements ModInitializer {
 	private void regEvents() {
 		AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
 			if (entity instanceof DogEntity dog) {
-				dog.setAttacking(player);
+				dog.setTarget(player);
 			}
 			return ActionResult.PASS;
 		});
+	}
+	private void regEnchants(){
+		Tool.regEnchant("with_tina",new WithTina());
 	}
 }
