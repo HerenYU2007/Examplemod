@@ -7,7 +7,7 @@
   "description": "example mod",
   "authors": [
     "HerenYU",
-    "BobbyWang"
+    "Bobbywang"
   ],
   "contact": {
     "homepage": "http://herenyu.space",
@@ -23,7 +23,7 @@
       "nightmare.heren.example.ExampleMod"
     ],
     "client": [
-      "nightmare.heren.example.entity.EntityTestingClient"
+      "nightmare.heren.example.ClientMain"
     ]
   },
   "mixins": [

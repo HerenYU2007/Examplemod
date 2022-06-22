@@ -6,7 +6,7 @@ import nightmare.heren.example.ExampleMod;
 import nightmare.heren.example.ModItemGroup;
 import nightmare.heren.example.Tool;
 
-public class modItems {
+public class ModItems {
 
    public static Item MODICON = Tool.regItem("modicon");
 

@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import nightmare.heren.example.Tool;
 
-public class modBlocks {
+public class ModBlocks {
     public final static Block DOG_BLOCK = Tool.regBlock("dog_block",
             new Block(FabricBlockSettings.of(Material.METAL).strength(5f).requiresTool()));
     public static void registerModBlocks() {

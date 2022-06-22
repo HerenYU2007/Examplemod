@@ -1,4 +1,4 @@
-package nightmare.heren.example.entity;
+package nightmare.heren.example;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -7,10 +7,11 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
-import nightmare.heren.example.ExampleMod;
+import nightmare.heren.example.entity.DogModel;
+import nightmare.heren.example.entity.DogRenderer;
 
 @Environment(EnvType.CLIENT)
-public class EntityTestingClient implements ClientModInitializer {
+public class ClientMain implements ClientModInitializer {
     public static final EntityModelLayer MODEL_CUBE_LAYER = new EntityModelLayer(new Identifier("entitytesting", "cube"), "main");
     @Override
     public void onInitializeClient() {
