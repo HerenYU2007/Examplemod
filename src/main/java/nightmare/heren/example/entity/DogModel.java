@@ -46,11 +46,11 @@ public class DogModel extends SinglePartEntityModel<DogEntity> {
 
     @Override
     public void setAngles(DogEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
-        this.head.yaw = headYaw * ((float)Math.PI / 180);
-        this.head.pitch = headPitch * ((float)Math.PI / 180);
+        this.head.yaw = headYaw * ((float) Math.PI / 180);
+        this.head.pitch = headPitch * ((float) Math.PI / 180);
         this.leftHindLeg.pitch = MathHelper.cos(limbAngle * 0.6662f) * 1.4f * limbDistance;
-        this.rightHindLeg.pitch = MathHelper.cos(limbAngle * 0.6662f + (float)Math.PI) * 1.4f * limbDistance;
-        this.leftFrontLeg.pitch = MathHelper.cos(limbAngle * 0.6662f + (float)Math.PI) * 1.4f * limbDistance;
+        this.rightHindLeg.pitch = MathHelper.cos(limbAngle * 0.6662f + (float) Math.PI) * 1.4f * limbDistance;
+        this.leftFrontLeg.pitch = MathHelper.cos(limbAngle * 0.6662f + (float) Math.PI) * 1.4f * limbDistance;
         this.rightFrontLeg.pitch = MathHelper.cos(limbAngle * 0.6662f) * 1.4f * limbDistance;
     }
 }
