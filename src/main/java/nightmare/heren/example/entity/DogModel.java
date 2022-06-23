@@ -1,32 +1,56 @@
 package nightmare.heren.example.entity;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.model.*;
-import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelPartNames;
-import net.minecraft.client.util.math.MatrixStack;
-import org.spongepowered.include.com.google.common.collect.ImmutableList;
+import net.minecraft.client.render.entity.model.SinglePartEntityModel;
+import net.minecraft.util.math.MathHelper;
 
-public class DogModel extends EntityModel<DogEntity> {
+@Environment(value= EnvType.CLIENT)
+public class DogModel extends SinglePartEntityModel<DogEntity> {
 
-    private final ModelPart base;
+    private final ModelPart root;
+    private final ModelPart head;
+    private final ModelPart leftHindLeg;
+    private final ModelPart rightHindLeg;
+    private final ModelPart leftFrontLeg;
+    private final ModelPart rightFrontLeg;
 
-    public DogModel(ModelPart modelPart) {
-        this.base = modelPart.getChild(EntityModelPartNames.CUBE);
+    public DogModel(ModelPart root) {
+        this.root = root;
+        this.head = root.getChild(EntityModelPartNames.HEAD);
+        this.rightHindLeg = root.getChild(EntityModelPartNames.RIGHT_HIND_LEG);
+        this.leftHindLeg = root.getChild(EntityModelPartNames.LEFT_HIND_LEG);
+        this.rightFrontLeg = root.getChild(EntityModelPartNames.RIGHT_FRONT_LEG);
+        this.leftFrontLeg = root.getChild(EntityModelPartNames.LEFT_FRONT_LEG);
     }
 
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
-        modelPartData.addChild(EntityModelPartNames.CUBE, ModelPartBuilder.create().uv(0, 0).cuboid(-6F, 12F, -6F, 12F, 12F, 12F), ModelTransform.pivot(0F, 0F, 0F));
-        return TexturedModelData.of(modelData, 64, 64);
-    }
-    @Override
-    public void setAngles(DogEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+        modelPartData.addChild(EntityModelPartNames.HEAD, ModelPartBuilder.create().uv(0, 0).cuboid(-4.0f, -8.0f, -4.0f, 8.0f, 8.0f, 8.0f), ModelTransform.pivot(0.0f, 6.0f, 0.0f));
+        modelPartData.addChild(EntityModelPartNames.BODY, ModelPartBuilder.create().uv(16, 16).cuboid(-4.0f, 0.0f, -2.0f, 8.0f, 12.0f, 4.0f), ModelTransform.pivot(0.0f, 6.0f, 0.0f));
+        ModelPartBuilder modelPartBuilder = ModelPartBuilder.create().uv(0, 16).cuboid(-2.0f, 0.0f, -2.0f, 4.0f, 6.0f, 4.0f);
+        modelPartData.addChild(EntityModelPartNames.RIGHT_HIND_LEG, modelPartBuilder, ModelTransform.pivot(-2.0f, 18.0f, 4.0f));
+        modelPartData.addChild(EntityModelPartNames.LEFT_HIND_LEG, modelPartBuilder, ModelTransform.pivot(2.0f, 18.0f, 4.0f));
+        modelPartData.addChild(EntityModelPartNames.RIGHT_FRONT_LEG, modelPartBuilder, ModelTransform.pivot(-2.0f, 18.0f, -4.0f));
+        modelPartData.addChild(EntityModelPartNames.LEFT_FRONT_LEG, modelPartBuilder, ModelTransform.pivot(2.0f, 18.0f, -4.0f));
+        return TexturedModelData.of(modelData, 64, 32);
     }
 
     @Override
-    public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
-        ImmutableList.of(this.base).forEach((modelRenderer) -> modelRenderer.render(matrices, vertices, light, overlay, red, green, blue, alpha));
+    public ModelPart getPart() {
+        return this.root;
+    }
+
+    @Override
+    public void setAngles(DogEntity entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
+        this.head.yaw = headYaw * ((float)Math.PI / 180);
+        this.head.pitch = headPitch * ((float)Math.PI / 180);
+        this.leftHindLeg.pitch = MathHelper.cos(limbAngle * 0.6662f) * 1.4f * limbDistance;
+        this.rightHindLeg.pitch = MathHelper.cos(limbAngle * 0.6662f + (float)Math.PI) * 1.4f * limbDistance;
+        this.leftFrontLeg.pitch = MathHelper.cos(limbAngle * 0.6662f + (float)Math.PI) * 1.4f * limbDistance;
+        this.rightFrontLeg.pitch = MathHelper.cos(limbAngle * 0.6662f) * 1.4f * limbDistance;
     }
 }

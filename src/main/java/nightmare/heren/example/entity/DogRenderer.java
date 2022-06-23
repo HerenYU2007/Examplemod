@@ -8,7 +8,7 @@ import nightmare.heren.example.ExampleMod;
 public class DogRenderer extends MobEntityRenderer<DogEntity, DogModel> {
 
     public DogRenderer(EntityRendererFactory.Context context) {
-        super(context, new DogModel(context.getPart(ClientMain.MODEL_CUBE_LAYER)), 0.5f);
+        super(context, new DogModel(context.getPart(ClientMain.MODEL_LAYER)), 0.5f);
     }
 
     @Override

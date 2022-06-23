@@ -12,10 +12,10 @@ import nightmare.heren.example.entity.DogRenderer;
 
 @Environment(EnvType.CLIENT)
 public class ClientMain implements ClientModInitializer {
-    public static final EntityModelLayer MODEL_CUBE_LAYER = new EntityModelLayer(new Identifier("entitytesting", "cube"), "main");
+    public static final EntityModelLayer MODEL_LAYER =new EntityModelLayer(new Identifier("minecraft", "dog"), "main");
     @Override
     public void onInitializeClient() {
         EntityRendererRegistry.register(ExampleMod.DOG, DogRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(MODEL_CUBE_LAYER, DogModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(MODEL_LAYER, DogModel::getTexturedModelData);
     }
 }

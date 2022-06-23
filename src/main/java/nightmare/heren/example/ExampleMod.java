@@ -3,13 +3,11 @@ package nightmare.heren.example;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -42,7 +40,7 @@ public class ExampleMod implements ModInitializer {
 	public void onInitialize() {
 		ModItems.ModItemRegister();
 		ModBlocks.registerModBlocks();
-		FabricDefaultAttributeRegistry.register(DOG, DogEntity.createMobAttributes());
+		FabricDefaultAttributeRegistry.register(DOG, DogEntity.createDogAttributes());
 		regEnchants();
 		regEvents();
 
@@ -69,12 +67,7 @@ public class ExampleMod implements ModInitializer {
 	}
 
 	private void regEvents() {
-		AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
-			if (entity instanceof DogEntity dog) {
-				dog.setTarget(player);
-			}
-			return ActionResult.PASS;
-		});
+
 	}
 	private void regEnchants(){
 		Tool.regEnchant("with_tina",new WithTina());

@@ -1,9 +1,12 @@
 package nightmare.heren.example.enchants;
 
+import net.minecraft.client.particle.EnchantGlyphParticle;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.MendingEnchantment;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -20,7 +23,7 @@ public class WithTina extends Enchantment {
     }
     @Override
     public int getMinPower(int level) {
-        return level*60;
+        return 1+level*60;
     }
 
     /**
@@ -44,7 +47,18 @@ public class WithTina extends Enchantment {
             living.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 20 * 5 * level, level));
             living.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 20 * 5 * level, 1));
         }
-        user.heal(3);
+        user.heal(4);
         super.onTargetDamaged(user, target, level);
+    }
+
+    /**
+     * 好疼
+     * @param level
+     * @param group
+     * @return
+     */
+    @Override
+    public float getAttackDamage(int level, EntityGroup group) {
+        return level*1.5f;
     }
 }
