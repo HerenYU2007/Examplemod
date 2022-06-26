@@ -1,13 +1,11 @@
 package nightmare.heren.example.entity;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.mob.Monster;
-import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.mob.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
@@ -23,7 +21,7 @@ public class DogEntity extends PathAwareEntity {
     }
 
     @Override
-    protected void initGoals() {
+    protected void initGoals(){
         this.goalSelector.add(1, new SwimGoal(this));
         this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.7));
         this.goalSelector.add(6, new LookAroundGoal(this));
@@ -56,8 +54,8 @@ public class DogEntity extends PathAwareEntity {
  */
 
     public static DefaultAttributeContainer.Builder createDogAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 25)//伤害
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.6)//速度
+        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 2)//伤害
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25)//速度
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 200);//生命值
     }
 }
